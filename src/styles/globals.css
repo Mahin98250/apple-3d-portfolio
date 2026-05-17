@@ -2,9 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: #050816;
   color: white;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+::selection {
+  background: rgba(125, 211, 252, 0.3);
+}
+
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
