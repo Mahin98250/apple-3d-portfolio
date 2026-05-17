@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './styles/globals.css';
 import FloatingNav from './components/FloatingNav';
 import SmoothCursor from './components/SmoothCursor';
+import MagneticButton from './components/MagneticButton';
 import HeroScene from './scenes/HeroScene';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import useScrollProgress from './hooks/useScrollProgress';
 
 function App() {
+  useScrollProgress()
+
   return (
     <main className='min-h-screen bg-background text-white overflow-hidden relative'>
       <SmoothCursor />
@@ -29,9 +33,11 @@ function App() {
             Premium cinematic frontend engineering powered by React, GSAP and Three.js.
           </p>
 
-          <button className='mt-10 px-8 py-4 rounded-full bg-white text-black font-medium hover:scale-105 transition-all duration-300'>
-            Explore Work
-          </button>
+          <div className='mt-10 flex justify-center'>
+            <MagneticButton>
+              Explore Work
+            </MagneticButton>
+          </div>
         </div>
       </section>
 
